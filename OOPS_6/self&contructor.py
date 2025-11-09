@@ -81,7 +81,7 @@ rohan = Employee()
 # e.salary → 50000
 # e.language → "Python"
 
-# 🧠 In short:
+#  In short:
 
 # Constructor = automatic setup function
 # that runs when you create an object
