@@ -16,11 +16,11 @@ class Employee:
         print("Good morning")
 
 
-dynamic = Employee()
+dynamic = Employee()  
 # dynamic.language = "JavaScript" # This is an instance attribute
-dynamic.greet()
+dynamic.greet() 
 dynamic.getInfo() 
-# Employee.getInfo(dynamic)
+# Employee.getInfo(dynamic) behind the scene where it pass 1 argument but if we didnt define self , getInfo didnt receive any argument so it gave error takes 0 positional arguments 
  
 
 

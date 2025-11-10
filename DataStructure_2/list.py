@@ -73,7 +73,7 @@ print(i.index(20))   # 1
 # 11. copy() — Shallow copy of a list
 listX = [1, 2, 3]
 listY = listX.copy()
-print(listY)   # [1, 2, 3]
+print(listY)   # [1, 2, 3]  and memory address will be different of listY
 
 
 # 12. len() — Get length
@@ -85,7 +85,7 @@ print(len(j))   # 3
 print(3 in [1, 2, 3])   # True
 
 
-# 14. List slicing
+# 14. List slicing [start:end] and end is exclusive
 k = [10, 20, 30, 40, 50]
 print(k[1:4])   # [20, 30, 40]
 

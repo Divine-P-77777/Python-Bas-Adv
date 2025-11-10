@@ -44,3 +44,9 @@ print("C:\\Users\\User")
 
 # \': Single Quote - Inserts a single quote character within a single-quoted string.
 print('It\'s a beautiful day.')
+
+#append
+greeting = "Hello"
+greeting += "Deepak"
+
+print(greeting)

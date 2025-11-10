@@ -1,6 +1,10 @@
+# Python has NO primitive data types.
+# All data types are objects, and variables store references to objects.
+# Means for each varaible or a function a new object is created in the memory and the variable or function points to that memory location.
+
 a = "31.2"
 b = float(a) # a but the type should be float
-t = type(b) 
+t = type(b) # type casting
 
 print(t)
 
@@ -27,6 +31,15 @@ c = "Harry" # c is a string
 d = False # d is a boolean variable
 
 e = None # e is a none type variable
+
+
+
+# Declare Variable with Type (Type Hinting)
+
+age: int = 18
+username: str = "admin"
+height: float = 5.9
+is_logged_in: bool = False
 
 # Numeric Types:
 # int: Integers (whole numbers).
