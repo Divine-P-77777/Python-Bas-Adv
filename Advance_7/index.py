@@ -1,6 +1,7 @@
 # 1️⃣ Lambda Functions
 # Small anonymous functions — perfect for one-line logic.
 # Use when: You need a tiny function only once.
+# same like arrow function in javascript
 
 add = lambda a, b: a + b
 print(add(5, 7))
@@ -9,16 +10,23 @@ print(add(5, 7))
 # Applies a function to every element in an iterable.
 # Use when: Transforming lists without loops.
 
-nums = [1, 2, 3, 4]
+nums = [1, 2, 3, 4] 
+
 squared = list(map(lambda x: x*x, nums))
 print(squared)
+
+def mul (x) :
+    return x * 2
+
+twice = list(map(mul,nums))
+print(f"The  twice of the  number list is {twice}")
 
 # 3️⃣ filter()
 # Keeps elements that return True for a condition.
 # Use when: You want only items that satisfy a condition.
 
 nums = [1, 2, 3, 4, 5, 6]
-even = list(filter(lambda x: x % 2 == 0, nums))
+even = list(filter(lambda x: x % 2 == 0, nums)) # why here explicityly mention the list()
 print(even)
 
 # 4️⃣ sorted()
@@ -27,6 +35,9 @@ print(even)
 
 students = [("Dipu", 88), ("Sam", 70), ("Ravi", 92)]
 sorted_by_marks = sorted(students, key=lambda x: x[1])
+sorted_by_Names = sorted(students, key= lambda x:x[0])
+
+print(sorted_by_Names)
 print(sorted_by_marks)
 
 # 5️⃣ List Comprehensions
@@ -41,7 +52,7 @@ print(squared)
 # Quick creation of dictionaries.
 
 data = ['a', 'b', 'c']
-index_map = {i: v for i, v in enumerate(data)}
+index_map = {i: v for i, v in enumerate(data)} # why here enumerater is used 
 print(index_map)
 
 # 7️⃣ Zip
@@ -50,7 +61,7 @@ print(index_map)
 names = ["a", "b", "c"]
 scores = [90, 80, 70]
 combined = list(zip(names, scores))
-print(combined)
+print(f" the zipped form {combined}")
 
 # 8️⃣ Enumerate
 # Get index + value while looping.
@@ -58,7 +69,7 @@ print(combined)
 for i, value in enumerate(["x", "y", "z"]):
     print(i, value)
 
-# 9️⃣ Try / Except / Finally
+# 9️⃣ Try / Except / Finally  :(mainly use for the asynchorous task)
 # Handle errors gracefully.
 
 try:
@@ -75,6 +86,7 @@ with open("file.txt", "r") as f:
     data = f.read()
 
 
+
 # Custom context manager:
 
 from contextlib import contextmanager
@@ -88,7 +100,7 @@ def my_resource():
 with my_resource():
     print("Inside")
 
-# 1️⃣1️⃣ Decorators
+# 1️⃣1️⃣ Decorators  
 # Add features to functions without modifying them.
 
 def logger(fn):
