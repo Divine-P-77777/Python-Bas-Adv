@@ -1,13 +1,10 @@
 # 3. Set (Unordered, Unique Elements)
 
 # A set is an unordered collection of unique items.
-
 # No duplicates
-
 # Unindexed
 
 # Mutable (elements can be added/removed)
-
 # Items must be immutable
 
 e = set() # Dont use s = {} as it will create an empty dictionary

@@ -13,13 +13,16 @@ print(add(5, 7))
 nums = [1, 2, 3, 4] 
 
 squared = list(map(lambda x: x*x, nums))
-print(squared)
+print(f"squared = {squared}")
 
 def mul (x) :
     return x * 2
 
 twice = list(map(mul,nums))
 print(f"The  twice of the  number list is {twice}")
+
+#  without list it shows like  <map object at 0x7f44e9071c00>
+
 
 # 3️⃣ filter()
 # Keeps elements that return True for a condition.
@@ -28,6 +31,7 @@ print(f"The  twice of the  number list is {twice}")
 nums = [1, 2, 3, 4, 5, 6]
 even = list(filter(lambda x: x % 2 == 0, nums)) # why here explicityly mention the list()
 print(even)
+
 
 # 4️⃣ sorted()
 # Sort any iterable with custom logic.
