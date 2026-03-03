@@ -37,7 +37,14 @@ print(n + m)
 
 # return self.n + num.n
 
+class Number:
+    def __init__(self, n):
+        self.n = n
 
+    def __add__(self, num):
+        return self.n + num.n
+    def __mul__(self, num):
+        return self.n * num.n
 # So output = 4 + 2 = 6
 
 # Operator overloading = teaching Python how to use operators (+, -, etc.) with your own classes.

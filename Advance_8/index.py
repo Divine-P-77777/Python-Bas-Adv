@@ -6,14 +6,16 @@
 add = lambda a, b: a + b
 print(add(5, 7))
 
-# 2️⃣ map()
+# 2️⃣ map(function, iterable)
 # Applies a function to every element in an iterable.
 # Use when: Transforming lists without loops.
+# time complexity = O(n) where n is the number of elements in the iterable. Each element is processed once.
 
 nums = [1, 2, 3, 4] 
 
 squared = list(map(lambda x: x*x, nums))
 print(f"squared = {squared}")
+
 
 def mul (x) :
     return x * 2
@@ -38,7 +40,7 @@ print(even)
 # Use when: You want sorting beyond default behavior.
 
 students = [("Dipu", 88), ("Sam", 70), ("Ravi", 92)]
-sorted_by_marks = sorted(students, key=lambda x: x[1])
+sorted_by_marks = sorted(students, key=lambda x: x[1]) # why here we use lambda function and x[1] because we want to sort by marks which is at index 1 in the tuple
 sorted_by_Names = sorted(students, key= lambda x:x[0])
 
 print(sorted_by_Names)
@@ -56,7 +58,8 @@ print(squared)
 # Quick creation of dictionaries.
 
 data = ['a', 'b', 'c']
-index_map = {i: v for i, v in enumerate(data)} # why here enumerater is used 
+index_map = {i: v for i, v in enumerate(data)} # why here enumerater is used because we want to create a dictionary where the keys are the indices of the elements in the list and the values are the elements themselves. The enumerate function provides both the index (i) and the value (v) for each element in the data list, allowing us to construct the desired dictionary.
+
 print(index_map)
 
 # 7️⃣ Zip
@@ -124,9 +127,9 @@ say_hi()
 
 # Efficient iteration — don't store everything in memory.
 
-def countdown(n):
+def countdown(n):  
     while n > 0:
-        yield n
+        yield n  # yields a value and pauses the function, resuming from here on the next call
         n -= 1
 
 for x in countdown(5):
@@ -143,7 +146,7 @@ def add(a: int, b: int) -> int:
 
 from dataclasses import dataclass
 
-@dataclass
+@dataclass  # decorator to automatically generate special methods like __init__, __repr__, and __eq__ for the class based on the defined attributes.
 class User:
     name: str
     age: int
