@@ -38,3 +38,4 @@ def factorial(n: int) -> int:
 
 n = int(input("Enter a number: "))
 print(f"The factorial of this number is: {factorial(n)}")
+# time complexity of this function is O(n) because we are calling the function n times.

@@ -9,7 +9,7 @@ print(character1)
 
 # Negative Slicing
 
-name = "Deepak" # here indexing like -6,-5,-4,-3,-2,-1
+name = "Deepak" # here indexing like -6,-5,-4,-3,-2,-1   , here also  excluding -1
 
 print(name[0:3])
 

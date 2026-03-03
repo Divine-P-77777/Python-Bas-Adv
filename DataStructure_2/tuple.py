@@ -39,12 +39,14 @@ print(len(t2))
 #  1. Tuple slicing
 t = (10, 20, 30, 40, 50)
 print(t[1:4])   # (20, 30, 40)
+# time complexity of slicing a tuple is O(k) where k is the number of elements in the resulting slice. This is because slicing creates a new tuple that contains the specified range of elements, and it needs to copy those elements into the new tuple. Therefore, the time complexity is linear with respect to the size of the slice being created.
 
 #  2. Tuple concatenation
 t3 = (1, 2)
 t4 = (3, 4)
 t5 = t3 + t4
 print(t5)   # (1, 2, 3, 4)
+# time complexity of tuple concatenation is O(n + m) where n and m are the number of elements in the two tuples being combined. This is because it needs to create a new tuple that contains all elements from both tuples, leading to linear time complexity relative to the total number of elements involved in the operation.
 
 #  3. Tuple repetition
 t = (5, 10)

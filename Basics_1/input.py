@@ -24,7 +24,7 @@ print("Full name is ", c + "  " + d)
 # f"" is beneficial because it simplifies string formatting, improves code readability, handles type conversion automatically, and is more efficient than traditional concatenation. 
 
 name = input("Enter your full name: ")
-age = (input("Enter your age: "))
+age = int(input("Enter your age: "))
 
 # age = int(input("Enter your age: "))
 print(f"My name is {name} and I am {age} years old.") #  just like  template  literals 

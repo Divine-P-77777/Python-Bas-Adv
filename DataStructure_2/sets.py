@@ -10,6 +10,7 @@
 e = set() # Dont use s = {} as it will create an empty dictionary
 a = {1, 5, 32, 54, 5, 5, 5}
 
+
 print(a)
 
 # Set Methods
@@ -20,8 +21,14 @@ print(b, type(b))
 
 b.add(566)
 print(b, type(b))
+
+# time complexity of add() is O(1) on average because it uses a hash table to store elements, allowing for constant time complexity for insertions. However, in rare cases of hash collisions, the time complexity can degrade to O(n), where n is the number of elements in the set, but this is uncommon with a good hash function and proper resizing of the hash table.
+
 b.remove(1)
 print(b, type(b))
+
+# time complexity of remove() is O(1) on average because it uses a hash table to store elements, allowing for constant time complexity for removals. However, in rare cases of hash collisions, the time complexity can degrade to O(n), where n is the number of elements in the set, but this is uncommon with a good hash function and proper resizing of the hash table.
+
 
 # Union And Intersection
 
@@ -30,30 +37,33 @@ set2 = {7, 8, 1, 78}
 
 print(set1.union(set2))
 print(set1.intersection(set2))
-
+# time complexity of union() and intersection() is O(n + m) where n and m are the number of elements in the two sets being combined or compared. This is because both operations need to iterate through all elements of both sets to create the resulting set, leading to linear time complexity relative to the total number of elements involved in the operation.
 
 # 1. discard()
 c = {1, 2, 3}
-c.discard(5)  # No error
+c.discard(5)  # No error  ,  it  not found  index
 print(c)
+# time complexity of discard() is O(1) on average because it uses a hash table to store elements, allowing for constant time complexity for removals. However, in rare cases of hash collisions, the time complexity can degrade to O(n), where n is the number of elements in the set, but this is uncommon with a good hash function and proper resizing of the hash table.
 
 
 # 2. pop()
 d = {10, 20, 30}
-x = d.pop()
+x = d.pop() # may give key error 
 print(x)
 print(d)
+
 
 
 #  3. clear()
 d.clear()
 print(d)   # set()
-
+# time complexity of clear() is O(1) because it simply resets the set to an empty state without needing to iterate through the elements.
 
 # 4. difference()
 set3 = {1, 2, 3}
 set4 = {2, 3}
 print(set3.difference(set4))  # {1}
+
 
 
 #  5. symmetric_difference()
@@ -67,7 +77,6 @@ u1 = {1, 2}
 u2 = {3, 4}
 u1.update(u2)
 print(u1)   # {1, 2, 3, 4}
-
 
 # 7. issubset() / issuperset()
 print({1, 2}.issubset({1, 2, 3}))   # True

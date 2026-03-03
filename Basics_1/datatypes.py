@@ -52,6 +52,7 @@ is_logged_in: bool = False
 # tuple: Ordered, immutable sequences of items.
 # range: Immutable sequences of numbers, often used for looping.
 
+
 # Mapping Type:
 # dict: Dictionaries (unordered collections of key-value pairs).
 
