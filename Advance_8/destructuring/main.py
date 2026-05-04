@@ -1,6 +1,6 @@
 # Destructuring (also called unpacking) is the process of breaking a collection — such as a tuple, list, or other iterable — into individual variables in a single assignment.
 
-# 📦 Basic Syntax:
+#  Basic Syntax:
 # a, b = (value1, value2)
 
 
@@ -23,7 +23,7 @@ print(y)  # 20
 
 
 # Example 2: Swapping Variables (no temp variable!)
-# ✅ Destructuring allows clean swapping without a temporary variable.
+#  Destructuring allows clean swapping without a temporary variable.
 a = 5
 b = 10
 
@@ -64,7 +64,7 @@ print(b)  # [2, 3, 4]
 print(c)  # 5
 
 
-# ✅ The *b collects the middle items as a list.
+#  The *b collects the middle items as a list.
 
 
 #  Nested Destructuring
@@ -76,14 +76,14 @@ name, (age, country) = person
 print(name)     # Gaurav
 print(age)      # 21
 print(country)  # India
-# ✅ Works great with nested data structures.
+#  Works great with nested data structures.
 
 
 # Ignoring Values with _
 # If you don’t need some values, assign them to _:
 a, _, b = (10, 20, 30)
 print(a, b)  # 10 30
-# ✅ _ is a throwaway variable (common convention).
+#  _ is a throwaway variable (common convention).
 
 
 

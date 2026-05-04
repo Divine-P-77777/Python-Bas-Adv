@@ -6,6 +6,9 @@
 
 # Mutable
 
+# create empty list
+my_list = []
+new_list = list()
 
 # 1. append() — Add item at the end
 a = [1, 2, 3]
@@ -51,7 +54,7 @@ print(e)   # []
 # time complexity of clear() is O(1) because it simply resets the list to an empty state without needing to iterate through the elements.
 
 
-# 7. sort() — Sort the list (ascending by default)
+# 7. sort() — Sort the list (ascending by default) 
 f = [4, 2, 1, 3]
 f.sort()
 print(f)   # [1, 2, 3, 4]
@@ -61,7 +64,13 @@ print(f)   # [1, 2, 3, 4]
 # Descending order:
 f.sort(reverse=True)
 
-# time complexity of sort(reverse=True) is also O(n log n) on average, as it uses the same Timsort algorithm as the default ascending sort. The reverse parameter simply changes the order of sorting but does not affect the underlying time complexity of the sorting process.
+#  The reverse parameter simply changes the order of sorting but does not affect the underlying time complexity of the sorting process.
+
+# Custom sorting using key:
+names = ["Alice", "Bob", "Charlie"]
+names.sort(key=len)  # Sort by length of names
+names.sort(key=lambda x: x[0])  # Sort by first character
+print(names)  # ['Bob', 'Alice', 'Charlie']
 
 # 8. reverse() — Reverse the list
 g = [1, 2, 3]
@@ -84,6 +93,7 @@ print(i.index(20))   # 1
 listX = [1, 2, 3]
 listY = listX.copy()
 print(listY)   # [1, 2, 3]  and memory address will be different of listY
+
 
 # time complexity of copy() is O(n) because it needs to create a new list and copy each element from the original list to the new list. This involves iterating through all elements in the original list, resulting in a linear time complexity relative to the number of elements in the list.
 

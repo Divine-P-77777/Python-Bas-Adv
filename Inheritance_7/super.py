@@ -10,7 +10,7 @@ class Programmer(Employee):
 
 class Manager(Programmer):
     def __init__(self):
-        super().__init__() # 👉 Call the parent class’s constructor (the one from which the current class is inheriting).
+        super().__init__() # Call the parent class’s constructor (the one from which the current class is inheriting).
         print("Constructor of Manager")
     c = 3
 

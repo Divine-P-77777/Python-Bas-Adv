@@ -65,7 +65,8 @@ print(record)    # {}
 
 
 # 9. copy() — Shallow copy
-copy_dict = data.copy()
+copy_dict = data.copy()  # copy_dict is at a different memory location than data
+print(copy_dict)
 
 
 # 10. Accessing values
@@ -76,7 +77,7 @@ copy_dict = data.copy()
 print(data.get("Unknown"))
 
 
-# 11. Using 'in' to check key existence
+# 11. Using 'in' to check key existence  with O(1) TC
 sample = {"P": 5}
 print("P" in sample)     # True
 print("Z" in sample)     # False

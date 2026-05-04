@@ -13,6 +13,13 @@ print("Floor Division:", a // b) # //
 print("Modulus (remainder):", a % b)  # %
 print("Exponent:", a ** b)       # **
 
+# Ceiling of a / b
+a, b = 10, 3
+floor_division = a // b  # Returns 3
+print("\nFloor of a / b:", floor_division)
+ceil_division = -(-a // b)  # Returns 4
+print("\nCeiling of a / b:", ceil_division)
+
 
 # ===============================
 # Assignment Operators
@@ -104,20 +111,22 @@ print("Right Shift:", m >> 1)    # >>
 nums = [1, 2, 3, 4]
 
 print("\nMembership Operators")
-print("2 in nums:", 2 in nums)
+print("2 in nums:", 2 in nums)  
 print("5 not in nums:", 5 not in nums)
+# in operator takes O(1) in case of sets and dictionaries, but O(N) in case of lists and tuples.
+
 
 
 # ===============================
 # Identity Operators
 # ===============================
 
-a = 10
-b = 10
+a = 1200
+b = 1200
 c = [1, 2, 3]   # creates a list at memory location A
 d = [1, 2, 3]   # creates another list at memory location B
 
 print("\nIdentity Operators")
-print("a is b:", a is b)
-print("c is d:", c is d)
-print("c == d:", c == d)
+print("a is b:", a is b) 
+print("c is d:", c is d)  # is operator checks if c and d refer to the same object in memory
+print("c == d:", c == d)  # == operator checks if the values of c and d are equal

@@ -26,7 +26,7 @@ print(f"The  twice of the  number list is {twice}")
 #  without list it shows like  <map object at 0x7f44e9071c00>
 
 
-# 3️⃣ filter()
+# 3️⃣ filter() - TC O(n) where n is the number of elements in the iterable. Each element is evaluated against the condition once.
 # Keeps elements that return True for a condition.
 # Use when: You want only items that satisfy a condition.
 
@@ -63,7 +63,7 @@ index_map = {i: v for i, v in enumerate(data)} # why here enumerater is used bec
 print(index_map)
 
 # 7️⃣ Zip
-# Combine multiple iterables together.
+# Combine multiple iterables together. like tuples
 
 names = ["a", "b", "c"]
 scores = [90, 80, 70]
@@ -123,7 +123,7 @@ def say_hi():
 
 say_hi()
 
-# 1️⃣2️⃣ Generators
+# Generators
 
 # Efficient iteration — don't store everything in memory.
 
@@ -135,13 +135,13 @@ def countdown(n):
 for x in countdown(5):
     print(x)
 
-# 1️⃣4️⃣ Typing (Type Hints)
+#  Typing (Type Hints)
 # Makes your code clean & reduces bugs.
 
 def add(a: int, b: int) -> int:
     return a + b
 
-# 1️⃣5️⃣ Dataclasses
+# Dataclasses
 # Auto-generate __init__, __repr__, __eq__, etc.
 
 from dataclasses import dataclass

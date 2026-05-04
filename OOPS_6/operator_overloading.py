@@ -10,7 +10,15 @@ m = Number(2)
 
 print(n + m)
 
-
+# n + m
+#  ↓
+# n.__add__(m)
+#  ↓
+# self = n (1), num = m (2)
+#  ↓
+# return 1 + 2
+#  ↓
+# 3
 
 # Python lets you do this by defining special methods like:
 
