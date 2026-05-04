@@ -61,3 +61,7 @@ asyncio.run(main())
 
 # Simple parallel tasks → use gather
 # Need control / cancel / manage → use create_task
+
+# try → risky code
+# except → handle error
+# finally → always run

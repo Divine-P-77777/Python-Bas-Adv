@@ -4,33 +4,56 @@ import aiohttp
 
 async def fetch(session, url):
     """
-    Makes an async HTTP GET request and returns response text
+    Makes an async HTTP request and safely handles errors
     """
-    # Send request (non-blocking)
-    async with session.get(url) as res:
-        # Wait for full response body (also non-blocking)
-        return await res.text()
+    try:
+        # Try to send request
+        async with session.get(url) as res:
+
+            # Raise error for bad status (like 404, 500)
+            res.raise_for_status()
+
+            # Read response body (non-blocking)
+            return await res.text()
+
+    except aiohttp.ClientError as e:
+        # Handles network / HTTP related errors
+        print(f"Request failed: {e}")
+        return None
+
+    finally:
+        # Always runs (success or error)
+        print(f"Finished attempt for {url}")
 
 
 async def main():
-    # List of URLs to fetch (same URL repeated 5 times)
     urls = ["https://example.com"] * 5
 
-    # Create a single session (connection pooling → faster)
     async with aiohttp.ClientSession() as session:
 
-        # Create tasks → start all requests immediately (concurrent)
+        # Start all tasks concurrently
         tasks = [asyncio.create_task(fetch(session, u)) for u in urls]
 
-        # Process results as they complete (NOT in order)
+        # Process results as they complete
         for task in asyncio.as_completed(tasks):
+            try:
+                result = await task
 
-            # Wait for the next completed task
-            result = await task
+                if result:
+                    print("Got response", len(result))
 
-            # Print size of response
-            print("Got response", len(result))
+            except Exception as e:
+                # Catch unexpected errors from task
+                print("Unexpected error:", e)
+
+    # Example of normal try-except-finally (sync)
+    try:
+        x = 5 / 0
+    except ZeroDivisionError:
+        print("Cannot divide by zero!")
+    finally:
+        print("Done")
 
 
-# Start event loop and run main coroutine
+# Run program
 asyncio.run(main())

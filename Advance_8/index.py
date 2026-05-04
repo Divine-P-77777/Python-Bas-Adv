@@ -1,4 +1,4 @@
-# 1️⃣ Lambda Functions
+#  Lambda Functions
 # Small anonymous functions — perfect for one-line logic.
 # Use when: You need a tiny function only once.
 # same like arrow function in javascript
@@ -6,7 +6,7 @@
 add = lambda a, b: a + b
 print(add(5, 7))
 
-# 2️⃣ map(function, iterable)
+#  map(function, iterable)
 # Applies a function to every element in an iterable.
 # Use when: Transforming lists without loops.
 # time complexity = O(n) where n is the number of elements in the iterable. Each element is processed once.
@@ -26,7 +26,7 @@ print(f"The  twice of the  number list is {twice}")
 #  without list it shows like  <map object at 0x7f44e9071c00>
 
 
-# 3️⃣ filter() - TC O(n) where n is the number of elements in the iterable. Each element is evaluated against the condition once.
+#  filter() - TC O(n) where n is the number of elements in the iterable. Each element is evaluated against the condition once.
 # Keeps elements that return True for a condition.
 # Use when: You want only items that satisfy a condition.
 
@@ -35,7 +35,7 @@ even = list(filter(lambda x: x % 2 == 0, nums)) # why here explicityly mention t
 print(even)
 
 
-# 4️⃣ sorted()
+#  sorted()
 # Sort any iterable with custom logic.
 # Use when: You want sorting beyond default behavior.
 
@@ -46,7 +46,7 @@ sorted_by_Names = sorted(students, key= lambda x:x[0])
 print(sorted_by_Names)
 print(sorted_by_marks)
 
-# 5️⃣ List Comprehensions
+#  List Comprehensions
 # Cleaner alternative to loops.
 # Use when: You want fast + clean data processing.
 
@@ -54,7 +54,7 @@ nums = [1, 2, 3, 4]
 squared = [x*x for x in nums]
 print(squared)
 
-# 6️⃣ Dictionary Comprehensions
+#  Dictionary Comprehensions
 # Quick creation of dictionaries.
 
 data = ['a', 'b', 'c']
@@ -62,7 +62,7 @@ index_map = {i: v for i, v in enumerate(data)} # why here enumerater is used bec
 
 print(index_map)
 
-# 7️⃣ Zip
+#  Zip
 # Combine multiple iterables together. like tuples
 
 names = ["a", "b", "c"]
@@ -70,23 +70,14 @@ scores = [90, 80, 70]
 combined = list(zip(names, scores))
 print(f" the zipped form {combined}")
 
-# 8️⃣ Enumerate
+# 8Enumerate
 # Get index + value while looping.
 
 for i, value in enumerate(["x", "y", "z"]):
     print(i, value)
 
-# 9️⃣ Try / Except / Finally  :(mainly use for the asynchorous task)
-# Handle errors gracefully.
 
-try:
-    x = 5 / 0
-except ZeroDivisionError:
-    print("Cannot divide by zero!")
-finally:
-    print("Done")
-
-# 🔟 Context Manager (with)
+# Context Manager (with)
 # Automatically handles open/close, acquire/release.
 
 with open("file.txt", "r") as f:
@@ -107,7 +98,7 @@ def my_resource():
 with my_resource():
     print("Inside")
 
-# 1️⃣1️⃣ Decorators  
+#  Decorators  
 # Add features to functions without modifying them.
 
 def logger(fn):
@@ -121,7 +112,18 @@ def logger(fn):
 def say_hi():
     print("Hi")
 
-say_hi()
+say_hi()  #say_hi is now replaced with wrapper
+
+# Flow when you call say_hi()
+# say_hi()
+#  ↓
+# wrapper()
+#  ↓
+# print("Before")
+#  ↓
+# fn()  → original say_hi() → prints "Hi"
+#  ↓
+# print("After")
 
 # Generators
 
