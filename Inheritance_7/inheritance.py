@@ -1,3 +1,11 @@
+# Inheritance (1st pillar of oops)
+# Inheritance allows one class to acquire the properties and methods of another class. This avoids writing the same code again and again, and makes your codebase much cleaner.
+# Parent class (also called base class) contains common, shared features
+# Child class (also called derived class) inherits everything from the parent
+# Child class can also add its own new attributes and methods on top
+# Changes made in the parent class automatically reflect in child classes
+# Real life example: Animal class has eat() and sleep(). Dog and Cat inherit these, and Dog adds bark(), Cat adds meow()
+
 class Employee:
     company = "ITC"
     def show(self):
